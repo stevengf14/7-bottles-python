@@ -1,9 +1,7 @@
 import numpy as np
 from pprint import pprint
 class Matrix:
-
     individual = [[[]]]
-
     def fillData(self, population):
         """
         This method fills the matrix with random initial population
@@ -16,11 +14,17 @@ class Matrix:
         self.individual.pop(0)
 
     def fitness(self, position):
+        """
+        This method calculates the total fitness cost
+        :param position:
+        :return: the total fitness cost
+        """
         return self.bottle_fitness(position) + self.wine_fitness(position)
 
     def bottle_fitness(self, position):
         """
-        This method calculates de fitness cost of the repeated bottles
+        This method calculates the fitness cost of the repeated bottles
+        :param position:
         :return: cost
         """
         cost = 10
@@ -36,7 +40,7 @@ class Matrix:
     def wine_fitness(self, position):
         """
         This method calculates the fitness of the measure of wine
-        :param value:
+        :param position:
         :return: cost
         """
         cost = 10
@@ -78,6 +82,14 @@ class Matrix:
         return cost
 
     def first_son(self, position1, position2, wposition1):
+        """
+        This method generates a son between the best individual and the second best individual,
+        and this son replaces the worst individual
+        :param position1:
+        :param position2:
+        :param wposition1:
+        :return:
+        """
         matrix_resultant = [[None for y in range(3)] for x in range(3)]
         for i in range(2):
             for j in range(3):
@@ -87,6 +99,14 @@ class Matrix:
         self.individual[wposition1] = matrix_resultant
 
     def second_son(self, position1, position2, wposition2):
+        """
+        This method generates a son between the best individual and the second best individual,
+        and this son replaces the second worst individual
+        :param position1:
+        :param position2:
+        :param wposition2:
+        :return:
+        """
         matrix_resultant = [[None for y in range(3)] for x in range(3)]
         for i in range(2):
             for j in range(3):
@@ -96,6 +116,12 @@ class Matrix:
         self.individual[wposition2] = matrix_resultant
 
     def first_son_mutation(self, wposition, mutation_probability):
+        """
+        This method mutates the first son only if the random number is into the probability mutation
+        :param wposition:
+        :param mutation_probability:
+        :return:
+        """
         random_number = np.random.random()
         if random_number <= mutation_probability:
             for i in range(2):
@@ -103,14 +129,15 @@ class Matrix:
                     self.individual[wposition][i][j] = np.random.randint(1,5)
 
     def second_son_mutation(self, wposition, mutation_probability):
+        """
+        This method mutates the second son only if the random number is into the probability mutation
+        :param wposition:
+        :param mutation_probability:
+        :return:
+        """
         random_number = np.random.random()
         if random_number <= mutation_probability:
             for i in range(1,3):
                 for j in range(3):
                     self.individual[wposition][i][j] = np.random.randint(1, 5)
 
-    def printMatrix(self, position):
-        pprint(self.individual[position])
-
-    def printTotal(self):
-        pprint(self.individual)

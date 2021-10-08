@@ -14,10 +14,12 @@ The problem request an initial population, the number of iterations, the mutatio
 
 #### Solution Interpretation
 **Example:**\
-{'iteration': 111,
- 'individual': 28,
+{'iteration': 127,
+ 'individual': 10,
  'cost': 20,
- 'bestSolution': [[2, 1, 4], [2, 1, 4], [2, 1, 4]]}
+ 'bestSolution': array([[2, 3, 3],
+       [2, 3, 3],
+       [3, 1, 1]])}
 
 **Iteration:** Represents the number of iterations that process executed.\
 **Individual:** Represents the position of the best individual.\
@@ -25,17 +27,17 @@ The problem request an initial population, the number of iterations, the mutatio
 **Best Solution:** Represents a matrix of the best solution.\
 
 In the example, we have the next matrix:\
-[[2, 1, 4],\
- [2, 1, 4],\
- [2, 1, 4]]\
+[[2, 3, 3],\
+ [2, 3, 3],\
+ [3, 1, 1]]\
 The rows represent the number of bottles.\
 The columns represent the amount of wine (1rst -> full, 2nd -> half full -> 3rd -> empty).\
 So, we have:\
 **Number of bottles:**\
-2 + 1 + 4 = 7 bottles\
-2 + 1 + 4 = 7 bottles\
-2 + 1 + 4 = 7 bottles\
+2 + 2 + 3 = 7 bottles (full)\
+3 + 3 + 1 = 7 bottles (half full)\
+3 + 3 + 1 = 7 bottles (empty)\
 **Amount of wine:**\
-2 full + 1 half full + 4 empty = 2.5 amount of wine\
-2 full + 1 half full + 4 empty = 2.5 amount of wine\
-2 full + 1 half full + 4 empty = 2.5 amount of wine
+2 full + 3 half full + 3 empty = 3.5 amount of wine\
+2 full + 3 half full + 3 empty = 3.5 amount of wine\
+3 full + 1 half full + 1 empty = 3.5 amount of wine

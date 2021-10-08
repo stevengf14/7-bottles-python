@@ -47,37 +47,37 @@ class Matrix:
         full = 1
         empty = 0
         media = 0.5
-        row0 = 0
-        row1 = 0
-        row2 = 0
+        col0 = 0
+        col1 = 0
+        col2 = 0
         for i in range(3):
             for j in range(3):
-                if i == 0:
-                    if j == 0:
-                        row0 += full * self.individual[position][i][j]
-                    elif j == 1:
-                        row0 += media * self.individual[position][i][j]
-                    elif j == 2:
-                        row0 += empty * self.individual[position][i][j]
-                if i == 1:
-                    if j == 0:
-                        row1 += full * self.individual[position][i][j]
-                    elif j == 1:
-                        row1 += media * self.individual[position][i][j]
-                    elif j == 2:
-                        row1 += empty * self.individual[position][i][j]
-                if i == 2:
-                    if j == 0:
-                        row2 += full * self.individual[position][i][j]
-                    elif j == 1:
-                        row2 += media * self.individual[position][i][j]
-                    elif j == 2:
-                        row2 += empty * self.individual[position][i][j]
-        if row0 != row1:
+                if j == 0:
+                    if i == 0:
+                        col0 += full * self.individual[position][i][j]
+                    elif i == 1:
+                        col0 += media * self.individual[position][i][j]
+                    elif i == 2:
+                        col0 += empty * self.individual[position][i][j]
+                if j == 1:
+                    if i == 0:
+                        col1 += full * self.individual[position][i][j]
+                    elif i == 1:
+                        col1 += media * self.individual[position][i][j]
+                    elif i == 2:
+                        col1 += empty * self.individual[position][i][j]
+                if j == 2:
+                    if i == 0:
+                        col2 += full * self.individual[position][i][j]
+                    elif i == 1:
+                        col2 += media * self.individual[position][i][j]
+                    elif i == 2:
+                        col2 += empty * self.individual[position][i][j]
+        if col0 != col1:
             cost -= 2
-        if row1 != row2:
+        if col1 != col2:
             cost -= 2
-        if row0 != row2:
+        if col0 != col2:
             cost -= 2
         return cost
 

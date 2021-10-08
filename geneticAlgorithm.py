@@ -1,4 +1,5 @@
 from matrix import Matrix
+import numpy as np
 
 def startProcess(population, iterations, mutation_probability, fiability):
     matrix = Matrix()
@@ -76,7 +77,7 @@ def startProcess(population, iterations, mutation_probability, fiability):
         "iteration": number,
         "individual": position1,
         "cost": matrix.fitness(position1),
-        "bestSolution": matrix.individual[position1]
+        "bestSolution": np.transpose(matrix.individual[position1])
     }
     return response
 

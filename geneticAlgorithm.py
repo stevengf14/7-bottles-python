@@ -73,10 +73,10 @@ def startProcess(population, iterations, mutation_probability, fiability):
         worst1 = 1000
         worst2 = 1000
     response = {
-        'Iteration': number,
-        'Individual': position1,
-        'Cost': matrix.fitness(position1),
-        'Best Solution': matrix.individual[position1]
+        "iteration": number,
+        "individual": position1,
+        "cost": matrix.fitness(position1),
+        "bestSolution": matrix.individual[position1]
     }
     return response
 

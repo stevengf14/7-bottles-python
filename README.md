@@ -40,4 +40,7 @@ So, we have:\
 **Amount of wine:**\
 2 full + 3 half full + 3 empty = 3.5 amount of wine\
 2 full + 3 half full + 3 empty = 3.5 amount of wine\
-3 full + 1 half full + 1 empty = 3.5 amount of wine
+3 full + 1 half full + 1 empty = 3.5 amount of wine\
+
+## Test
+If you want to test the algorithm, here is an option: https://kind-williams-85b619.netlify.app/
